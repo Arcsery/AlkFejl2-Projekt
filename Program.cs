@@ -27,12 +27,10 @@ class Program
                     string arg = args[i];
                     if (arg.StartsWith("--username="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         username = arg.Substring("--username=".Length);
                     }
                     else if (arg.StartsWith("--password="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         password = arg.Substring("--password=".Length);
                     }
                 }
@@ -43,7 +41,6 @@ class Program
                     return;
                 }
 
-                // Meghívjuk a RegisterUser metódust a kapott adatokkal
                 User.RegisterUser(guid.ToString(), username, password);
                 break;
 
@@ -53,12 +50,10 @@ class Program
                     string arg = args[i];
                     if (arg.StartsWith("--username="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         username = arg.Substring("--username=".Length);
                     }
                     else if (arg.StartsWith("--password="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         password = arg.Substring("--password=".Length);
                     }
                     else if (arg.StartsWith("--webUsername="))
@@ -92,12 +87,10 @@ class Program
                     string arg = args[i];
                     if (arg.StartsWith("--username="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         username = arg.Substring("--username=".Length);
                     }
                     else if (arg.StartsWith("--password="))
                     {
-                        // Kivágjuk az egyenlőség utáni részt
                         password = arg.Substring("--password=".Length);
                     }
                 }

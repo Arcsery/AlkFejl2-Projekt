@@ -33,15 +33,15 @@ class User
 
         var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
-            HasHeaderRecord = false, // Ne írjon fejlécet
-            NewLine = Environment.NewLine // Az új sor karakter legyen a rendszerhez illeszkedő
+            HasHeaderRecord = false,
+            NewLine = Environment.NewLine
         };
 
         using (var writer = new StreamWriter("users.csv", append: true))
         using (var csv = new CsvWriter(writer, csvConfig))
         {
             csv.WriteRecord(user);
-            csv.NextRecord(); // Ugrás a következő sorba
+            csv.NextRecord();
         }
 
         Console.WriteLine("Sikeres regisztráció.");
@@ -56,7 +56,6 @@ class User
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                // A CSV fájlban csak az első vessző utáni adatot olvassuk be (a felhasználónevet)
                 string[] parts = line.Split(',');
                 if (parts.Length > 0)
                 {
@@ -84,7 +83,7 @@ class User
             }
         }
 
-        return null; // Ha nincs ilyen felhasználó, visszaadunk null-t
+        return null;
     }
 
     public static bool Authentication(string username, string password)
@@ -116,7 +115,6 @@ class User
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                // A CSV fájlban csak az első vessző utáni adatot olvassuk be (a felhasználónevet)
                 string[] parts = line.Split(',');
                 if (parts[0] == id)
                 {
